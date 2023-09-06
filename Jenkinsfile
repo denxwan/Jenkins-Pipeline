@@ -1,10 +1,4 @@
 pipeline{
-    agent any
-    environment{
-        DIRECTORY_PATH="https://github.com/hirushanirmalt/Deakin-Unit-Page"
-        TESTING_ENVIRONMENT="JENKINS"
-        PRODUCTION_ENVIRONMENT="Haritha"
-    }
     stages{
         stage('Build') {
             steps{
@@ -36,7 +30,7 @@ pipeline{
                 success{
                     mail to: "harithadenuwan01@gmail.com",
                     subject: "Security scan status Email",
-                    body: "Security scasn was successful"
+                    body: "Security scan was successful"
                 }
             }
         }
