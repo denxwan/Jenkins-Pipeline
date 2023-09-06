@@ -26,9 +26,9 @@ pipeline{
                 echo "Running security scans using OWASP ZAP tool"
             }
         }
-        stage('Deploying to Staging') {
+        stage('Integration tests on Staging') {
             steps{
-                echo "Deploying to staging using Phabricator tool"
+                echo "Running integration tests  using Phabricator tool"
             }
         }
         stage('Deploy to Production') {
