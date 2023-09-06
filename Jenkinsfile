@@ -8,39 +8,32 @@ pipeline{
     stages{
         stage('Build') {
             steps{
-                echo "Fetch the source code from the directory path ($DIRECTORY_PATH) specified by the environment variable"
-                echo "Compile the code and generate anby necessary artifacts"
+                echo "Building the code using Maven tool"
             }
         }
-        stage('Test') {
+        stage('Unit and Integration Tests') {
             steps{
-                echo "=====UNIT-TESTS====="
-                echo "=====INTEGRATION-TESTS====="
+                echo "Running unit and integration tests using JUnit tool"
             }
         }
-        stage('Code Quality Check') {
+        stage('Code Analysis') {
             steps{
-                echo "Check the quality of the code"
+                echo "Conducting code analysis using SonarQube tool"
             }
         }
-        stage('Deploy') {
+        stage('Security Scan') {
             steps{
-                echo "Deploy the application to a testing environment ($TESTING_ENVIRONMENT) specified by the environment variable"
+                echo "Running security scans using OWASP ZAP tool"
             }
         }
-        stage('Approval') {
+        stage('Deploying to Staging') {
             steps{
-                sleep 10
+                echo "Deploying to staging using Phabricator tool"
             }
         }
         stage('Deploy to Production') {
             steps{
-                echo "Deployed to the $PRODUCTION_ENVIRONMENT production environment"
-            }
-        }
-        stage('Complete') {
-            steps{
-                echo "Completed"
+                echo "Deploying to production using AWS EC2 instance"
             }
         }
     }
