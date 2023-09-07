@@ -52,7 +52,7 @@ pipeline{
         }
         stage('Deploy to Production') {
             steps{
-                echo "Deploying to production using AWS EC2 instance"
+                echo "Deploying to production using AWS EC2 instance tool"
             }
         }
     }
