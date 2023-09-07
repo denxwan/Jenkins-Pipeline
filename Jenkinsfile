@@ -16,6 +16,11 @@ pipeline{
                     subject: "Tests status Email",
                     body: "Tests were successful"
                 }
+                failure{
+                    mail to: "harithadenuwan01@gmail.com",
+                    subject: "Tests status Email",
+                    body: "Tests failed"
+                }
             }
         }
         stage('Code Analysis') {
@@ -33,11 +38,16 @@ pipeline{
                     subject: "Security scan status Email",
                     body: "Security scan was successful"
                 }
+                failure{
+                    mail to: "harithadenuwan01@gmail.com",
+                    subject: "Security scan status Email",
+                    body: "Security scan failed"
+                }
             }
         }
         stage('Integration tests on Staging') {
             steps{
-                echo "Running integration tests  using Phabricator tool"
+                echo "Running integration tests using Jenkins X tool"
             }
         }
         stage('Deploy to Production') {
